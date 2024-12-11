@@ -1,0 +1,98 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eee2e2;
+}
+
+header {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 50px;  /* Adjust the width as needed */
+  height: auto;  /* Maintain aspect ratio */
+  margin-right: 10px;  /* Space between the image and text */
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-text .mel {
+  color: #ffffff;
+}
+
+.logo-text .bet {
+  color: #f7df76;
+}
+
+nav ul.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul.nav-links li {
+  margin-right: 20px;
+}
+
+nav ul.nav-links li a {
+  color: #f7e062;
+  text-decoration: none;
+}
+
+.main {
+  padding: 20px;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.video-container h2 {
+  margin-bottom: 20px;
+}
+
+.video-container video {
+  width: 80%;  /* Adjust the width as needed */
+  max-width: 800px;  /* Maximum width */
+  height: auto;  /* Maintain aspect ratio */
+  margin-bottom: 20px;
+}
+
+.additional-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.additional-videos video {
+  width: 80%;  /* Adjust the width as needed */
+  max-width: 400px;  /* Maximum width for smaller videos */
+  height: auto;  /* Maintain aspect ratio */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}

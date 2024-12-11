@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MELBET Agent Form</title>
+  <link rel="stylesheet" href="age.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("your_user_id_here"); // Replace with your EmailJS User ID
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="mel">MEL</span><span class="bet">BET</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="agent-form-section">
+      <h1>Become a MELBET Agent</h1>
+      <p>Fill out the form below to join our team and gain access to exclusive opportunities.</p>
+      <p>Click the link to join the WhatsApp group: <a href="https://chat.whatsapp.com/EchyErJWq8T32HeNgp7OhN">Join WhatsApp Group</a></p>
+      <form action="mailto:ramandhandumbuya01@gmail.com,infokangaylux@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <!-- form fields -->
+        <button type="submit">Submit</button>
+      
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 MELBET Guide. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('agent-form');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+      };
+
+      const response = await fetch('http://localhost:3000/submit-agent-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      emailjs.send("your_service_id", "your_template_id", {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        to_email: "ramandhandumbuya01@gmail.com,infokangaylux@gmail.com"
+      })
+      .then((response) => {
+        alert("Form submitted successfully!");
+        form.reset();
+      })
+      .catch((error) => {
+        alert("An error occurred while submitting the form. Please try again later.");
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MELBET Guide</title>
+  <link rel="stylesheet" href="co-tact.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <span class="mel">MEL</span><span class="bet">BET</span>
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="contact-section">
+      <h1>Contact Us</h1>
+      <p>We value your feedback and inquiries. You can reach us using the following details:</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:infokangaylux@gmail.com| ramandhandumbuya01@gmail.com">infokangaylux@gmail.com, ramandhandumbuya01@gmail.com </a></p>
+        <p><strong>Phone:</strong> <a href="tel:+23278297288, +23234994803">+23278297288, +23234994803</a></p>
+        <p><strong>Location:</strong> <b>2 cassava farm junction, Juba</b></p>
+      </div>
+     
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 MELBET Guide. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Initialize Google Maps
+    function initMap() {
+      const location = { lat: 8.4657, lng: -13.2317 }; // Sierra Leone coordinates
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: location,
+      });
+      new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "MELBET Guide Location",
+      });
+    }
+    window.onload = initMap;
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+    
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+    
+      fetch('/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message); // Alert the user with the response message
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+    
+  </script>
+</body>
+</html>

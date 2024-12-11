@@ -1,0 +1,30 @@
+/* Privacy Policies Page Styles */
+.privacy-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .privacy-section h1, .privacy-section h2 {
+    color: orange;
+    margin-bottom: 10px;
+  }
+  
+  .privacy-section p {
+    margin: 10px 0;
+  }
+  
+  .image-placeholder {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
